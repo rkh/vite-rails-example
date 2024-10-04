@@ -10,15 +10,13 @@
     <%= javascript_importmap_tags %>
     <%= vite_client_tag %>
     <%= vite_javascript_tag 'application' %>
-    <!--
-      If using a TypeScript entrypoint file:
-        vite_typescript_tag 'application'
+    <%= vite_stylesheet_tag 'application.scss' %>
 
-      If using a .jsx or .tsx entrypoint, add the extension:
-        vite_javascript_tag 'application.jsx'
-
-      Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
-    -->
+    <script type="module">
+      if (!("anchorName" in document.documentElement.style)) {
+        import("https://unpkg.com/@oddbird/css-anchor-positioning");
+      }
+    </script>
 
   </head>
 
